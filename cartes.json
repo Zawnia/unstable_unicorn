@@ -1,0 +1,111 @@
+{
+  "catalogue": [
+    {
+      "id": "bebe_01",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte est dans votre Écurie, elle compte comme 1 Licorne.",
+      "image_url": "/static/images/bebe_licorne.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_01",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "Juste une licorne. Elle vous aime.",
+      "image_url": "/static/images/licorne_basique.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "pioche_deux",
+      "nom": "Pioche de l'Écurie",
+      "type_carte": "MAGIE",
+      "texte_effet": "Piochez 2 cartes.",
+      "image_url": "/static/images/pioche_deux.png",
+      "trigger": "ON_PLAY",
+      "effet": [
+        {
+          "operation": "MOVE",
+          "source": {
+            "zone": "PIOCHE"
+          },
+          "destination": {
+            "zone": "MAIN"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "bombe_paillettes",
+      "nom": "Bombe de Paillettes",
+      "type_carte": "MAGIE",
+      "texte_effet": "Chaque joueur (y compris vous) doit se DÉFAUSSER d'une carte.",
+      "image_url": "/static/images/bombe_paillettes.png",
+      "trigger": "ON_PLAY",
+      "effet": [
+        {
+          "operation": "LOOP",
+          "cible": "ALL_PLAYERS",
+          "action": [
+            {
+              "operation": "CHOOSE_THEN_MOVE",
+              "source": {
+                "zone": "MAIN",
+                "joueur": "CURRENT_LOOP_PLAYER"
+              },
+              "destination": {
+                "zone": "DEFAUSSE"
+              },
+              "count": 1,
+              "filter": {
+                "type": [
+                  "ALL"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narval_torpille",
+      "nom": "Narval Torpille",
+      "type_carte": "MAGIQUE",
+      "texte_effet": "Quand cette carte entre dans votre Écurie, vous pouvez DÉTRUIRE une carte Amélioration ou Déclassement.",
+      "image_url": "/static/images/narval_torpille.png",
+      "trigger": "ON_ENTER_STABLE",
+      "effet": [
+        {
+          "operation": "CHOOSE_THEN_MOVE",
+          "optional": true,
+          "source": {
+            "zone": "ECURIE",
+            "joueur": "ANY"
+          },
+          "destination": {
+            "zone": "DEFAUSSE"
+          },
+          "count": 1,
+          "filter": {
+            "type": [
+              "AMELIORATION",
+              "DECLASSEMENT"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "huuuuu",
+      "nom": "Huuuuu",
+      "type_carte": "INSTANTANE",
+      "texte_effet": "Jouez cette carte pour annuler immédiatement la carte qu'un autre joueur est en train de jouer.",
+      "image_url": "/static/images/huuuuu.png",
+      "trigger": null,
+      "effet": null
+    }
+  ]
+}

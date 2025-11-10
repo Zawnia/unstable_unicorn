@@ -1,0 +1,263 @@
+/* --- Animations --- */
+@keyframes pulse-red {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 10px 15px rgba(220, 53, 69, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+@keyframes pulse-blue {
+    0% { box-shadow: 0 0 5px rgba(97, 218, 251, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(97, 218, 251, 1); }
+    100% { box-shadow: 0 0 5px rgba(97, 218, 251, 0.5); }
+}
+
+
+/* --- Réglages Globaux --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    background-color: #1a1c20; /* Fond très sombre */
+    color: #e0e0e0;
+    padding: 20px;
+    overflow-y: hidden; /* Empêche le scroll vertical de la page */
+}
+
+h2, h3, h4 {
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+h3 {
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 20px 0;
+}
+
+/* --- Conteneurs & Layout --- */
+.container {
+    background-color: #282c34;
+    border: 1px solid #555;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+#zone-connexion {
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+#zone-jeu {
+    display: flex;
+    gap: 20px;
+    height: calc(100vh - 40px); /* Prend toute la hauteur */
+}
+
+#zone-infos-joueurs {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#zone-plateau-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Boutons & Inputs --- */
+button {
+    background-color: #61dafb; /* Bleu "licorne" */
+    color: #282c34;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #61dafb;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #777;
+    background-color: #222;
+    color: #eee;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* --- Colonne de Gauche (Infos) --- */
+#liste-joueurs {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#liste-joueurs li {
+    font-size: 18px;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+#liste-joueurs li.est-mon-tour {
+    color: #61dafb;
+    font-weight: bold;
+    background-color: rgba(97, 218, 251, 0.1);
+    animation: pulse-blue 2s infinite;
+}
+
+#logs {
+    flex-grow: 1; /* Prend l'espace restant */
+    overflow-y: auto; /* Scroll interne */
+    background-color: #1c1e22;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+#logs div { padding-bottom: 5px; }
+
+/* --- Colonne de Droite (Jeu) --- */
+#plateau {
+    /* NOUVEAU LAYOUT : HORIZONTAL */
+    display: flex;
+    flex-wrap: nowrap; /* Pas de retour à la ligne */
+    overflow-x: auto; /* Scroll horizontal si besoin */
+    gap: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    flex-grow: 1; /* Prend le plus de place */
+}
+
+.ecurie {
+    border: 1px solid #777;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #333;
+    /* NOUVEAU : Taille fixe pour scroll horizontal */
+    width: 300px; 
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.ecurie h4 {
+    color: #fff;
+    text-align: center;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+.ecurie-cartes {
+    /* NOUVEAU : conteneur pour les cartes dans l'écurie */
+    display: flex;
+    flex-wrap: wrap; /* Les cartes vont à la ligne DANS l'écurie */
+    gap: 8px;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+#ma-main {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+/* --- Les Cartes --- */
+.carte-ecurie, .carte-main {
+    width: 80px;
+    height: 110px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    font-weight: bold;
+    font-size: 13px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.carte-type-instantane {
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.overlay-content {
+    background: #1f1f23;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 25px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+#overlay-countdown {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #ffcd1a;
+}
+
+#overlay-buttons {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#overlay-buttons button {
+    width: 100%;
+}
