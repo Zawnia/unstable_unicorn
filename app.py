@@ -1,8 +1,7 @@
 import eventlet
-eventlet.monkey_patch() # DOIT être tout en haut
+eventlet.monkey_patch()
 
 from flask import Flask, render_template, request
-# 'emit' a été retiré d'ici, car nous utilisons 'socketio.emit' partout
 from flask_socketio import SocketIO, join_room, leave_room 
 
 import cartes
@@ -21,12 +20,11 @@ TEMPS_REPONSE_HUUUU = 5  # secondes pour répondre
 cartes.charger_catalogue_cartes()
 print("Serveur prêt et catalogue de cartes chargé.")
 
-# --- Fonctions Utilitaires (MODIFIÉES) ---
+# --- Fonctions Utilitaires  ---
 
 def diffuser_etat_partie(id_salle):
     partie = parties_actives.get(id_salle)
     if partie:
-        # CORRECTION: On utilise socketio.emit
         socketio.emit('mise_a_jour_etat', partie.to_dict_public(), to=id_salle)
     else:
         print(f"Erreur: Impossible de diffuser l'état pour la salle {id_salle}")
@@ -36,10 +34,9 @@ def envoyer_mains_privees(partie):
         main_ids = joueur.main
         main_objets = [cartes.CATALOGUE_CARTES[id_carte].to_dict() 
                        for id_carte in main_ids if id_carte in cartes.CATALOGUE_CARTES]
-        # CORRECTION: On utilise socketio.emit
         socketio.emit('mise_a_jour_main', main_objets, to=joueur.id_session)
 
-# (La fonction resoudre_carte_jouee est inchangée, elle n'émet rien)
+
 def resoudre_carte_jouee(partie, joueur_source, carte_modele):
     """Rejoue la logique initiale de résolution d'une carte quand le timer expire."""
     if not joueur_source or not carte_modele:
@@ -278,7 +275,7 @@ def on_reponse_ciblage(data):
     partie = parties_actives.get(id_salle)
     joueur = partie.get_joueur(request.sid)
     
-    if not partie or not joueur or partie.phase != "CIBLAG_REQUIS":
+    if not partie or not joueur or partie.phase != "CIBLAGE_REQUIS":
         return socketio.emit('erreur', {"message": "Pas en phase de ciblage."}, to=request.sid)
         
     action_en_pause = partie.action_en_attente
@@ -324,4 +321,4 @@ def on_reponse_ciblage(data):
 # --- Démarrage ---
 if __name__ == '__main__':
     print("Démarrage du serveur Unstable Unicorns (MODE DATA-DRIVEN)...")
-    socketio.run(app, host='0.0.0.0', port=5000, debug=False)
+    socketio.run(app, host='0.0.0.0', port=8080, debug=True)
