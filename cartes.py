@@ -36,7 +36,7 @@ def charger_catalogue_cartes():
     try:
         with open('cartes.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
-            CATALOGUE_CARTES_JSON = data['catalogue'] # <-- NOUVEAU: Stocke le JSON brut
+            CATALOGUE_CARTES_JSON = data['catalogue'] 
             
             for carte_data in data['catalogue']:
                 carte_obj = Carte(
