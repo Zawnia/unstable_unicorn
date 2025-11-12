@@ -1,8 +1,7 @@
 import eventlet
-eventlet.monkey_patch() # DOIT être tout en haut
+eventlet.monkey_patch()
 
 from flask import Flask, render_template, request
-# 'emit' a été retiré d'ici, car nous utilisons 'socketio.emit' partout
 from flask_socketio import SocketIO, join_room, leave_room 
 
 import cartes
@@ -15,7 +14,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'votre_cle_secrete_ici'
 parties_actives = {} 
 socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
-TEMPS_REPONSE_HUUUU = 5  # secondes pour répondre
+TEMPS_REPONSE_HUUUU = 5 
 
 # --- Chargement initial ---
 cartes.charger_catalogue_cartes()
