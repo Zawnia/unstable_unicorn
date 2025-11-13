@@ -320,5 +320,5 @@ def on_reponse_ciblage(data):
 
 # --- Démarrage ---
 if __name__ == '__main__':
-    print("Démarrage du serveur Unstable Unicorns (MODE DATA-DRIVEN)...")
+    print("Démarrage du serveur Unstable Unicorns ...")
     socketio.run(app, host='0.0.0.0', port=8080, debug=True)

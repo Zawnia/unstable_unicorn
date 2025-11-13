@@ -4,8 +4,107 @@
       "id": "bebe_01",
       "nom": "Bébé Licorne",
       "type_carte": "BEBE",
-      "texte_effet": "Si cette carte est dans votre Écurie, elle compte comme 1 Licorne.",
-      "image_url": "/static/images/bebe_licorne.png",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_1.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_02",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_2.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_04",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_4.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_05",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_5_Bebe_Narval.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_06",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_6.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_07",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_7.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_08",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_8.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_09",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_9.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_10",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_10.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_11",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_11.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_12",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_12.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "bebe_13",
+      "nom": "Bébé Licorne",
+      "type_carte": "BEBE",
+      "texte_effet": "Si cette carte doit être sacrifiée, détruite ou reprise en main, renvoyez-la dans la Nurserie à la place.",
+      "image_url": "static/Images_cartes/Licornes/BB_Licornes/BB_Licorne_13.png",
       "trigger": null,
       "effet": null
     },
@@ -13,8 +112,71 @@
       "id": "basique_01",
       "nom": "Licorne Basique",
       "type_carte": "BASIQUE",
-      "texte_effet": "Juste une licorne. Elle vous aime.",
-      "image_url": "/static/images/licorne_basique.png",
+      "texte_effet": "Cette carte n'a aucun pouvoir spécial, mais elle est tellement mignonne !",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_1_Narval_Standard.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_02",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "« Une barbe, c'est tellement sexy ! »",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_2.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_03",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "« On ne relève son col que pour les rendez-vous galants.",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_3.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_04",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "#sansmaquillage #sansfiltre #lunettesdesoleil #sanscomplexe #selfie #labase #TGIF #crinièreparfaite",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_4.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_05",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "« Danse comme si personne ne regardait... »",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_5.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_06",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "« La cannelle donne à la vie tout son piquant. »",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_6.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_07",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "« Seuls comptent les vinyles et les cassettes. »",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_7.png",
+      "trigger": null,
+      "effet": null
+    },
+    {
+      "id": "basique_08",
+      "nom": "Licorne Basique",
+      "type_carte": "BASIQUE",
+      "texte_effet": "❤🙌🦄🙌💔🐴😂😂😂",
+      "image_url": "static/Images_cartes/Licornes/Licornes_Standard/Licorne_Standard_8.png",
       "trigger": null,
       "effet": null
     },
@@ -94,11 +256,11 @@
       ]
     },
     {
-      "id": "huuuuu",
-      "nom": "Huuuuu",
+      "id": "huuue",
+      "nom": "Huuue",
       "type_carte": "INSTANTANE",
-      "texte_effet": "Jouez cette carte pour annuler immédiatement la carte qu'un autre joueur est en train de jouer.",
-      "image_url": "/static/images/huuuuu.png",
+      "texte_effet": "Utilisez cette carte lorsqu'un autre joueur essaie d'en jouer une de sa main et forcez-le à défausser sa carte à la place.",
+      "image_url": "static/Images_cartes/Huuue/Huue.png",
       "trigger": null,
       "effet": null
     }
