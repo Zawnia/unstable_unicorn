@@ -32,7 +32,6 @@ def resoudre_effet(partie, joueur_source, carte_jouee, effet_json_liste):
                 return # La résolution est en pause
 
         elif op_type == "MOVE":
-            # (Logique inchangée)
             print(f"  -> Opération: MOVE")
             source_zone_nom = operation_data.get('source', {}).get('zone')
             dest_zone_nom = operation_data.get('destination', {}).get('zone')

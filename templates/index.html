@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unstable Unicorns 🦄</title>
-    
+    <title>Unstable Unicorns - L'Arène</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -12,64 +12,68 @@
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     
     <link rel="stylesheet" href="/static/style.css">
-    
     <script defer src="/static/jeu.js"></script>
 </head>
 <body>
 
-    <div id="zone-connexion" class="container">
-        <h2>Unstable Unicorns 🦄</h2>
-        <p>Rejoindre ou créer une partie</p>
-        <input type="text" id="input-nom" placeholder="Votre nom" />
-        <input type="text" id="input-salle" placeholder="Nom de la salle" />
-        <button id="btn-rejoindre">Rejoindre</button>
+    <div id="zone-connexion">
+        <div class="connexion-boite">
+            <h1>Unstable Unicorns</h1>
+            <p>Rejoignez le chaos !</p>
+            <input type="text" id="input-nom" placeholder="Votre nom...">
+            <input type="text" id="input-salle" placeholder="Nom de la salle...">
+            <button id="btn-rejoindre" class="btn-primaire">Rejoindre / Créer</button>
+        </div>
     </div>
 
     <div id="zone-jeu" style="display: none;">
-        
-        <div id="zone-infos-joueurs" class="container">
-            <h2>Salle : <span id="nom-salle"></span></h2>
-            <hr>
-            
-            <h3>Joueurs :</h3>
-            <ul id="liste-joueurs">
-                </ul>
-            
-            <button id="btn-lancer-partie">Lancer la partie ! (Min 2)</button>
-            <hr>
-            <h3>Logs :</h3>
-            <div id="logs">
-                </div>
-        </div>
 
-        <div id="zone-plateau-main" class="container">
-            <h3>Infos Partie: <span id="infos-partie"></span></h3>
-            <div id="zone-actions-joueur">
-                <button id="btn-piocher" style="display: none;">Piocher (Action)</button>
-            </div>
+        <div id="arene-de-jeu">
             
-            <hr>
-            
-            <h3>Plateau (Écuries)</h3>
             <div id="plateau">
                 </div>
-            
-            <hr>
-            
-            <h3>Ma Main</h3>
+
+            <div id="vortex-central">
+                <div class="carte-vortex-placeholder">Jouez ici</div>
+            </div>
+
             <div id="ma-main">
                 </div>
-        </div>
 
+            <div id="interface-laterale">
+                <div id="infos-partie">Phase...</div>
+                <button id="btn-piocher" class="btn-action">Piocher</button>
+                <button id="btn-lancer-partie" class="btn-action">Lancer</button>
+                <button id="logs-toggle" class="btn-action">Logs</button>
+            </div>
+
+            <div id="logs-container" class="hidden">
+                 <div id="logs"></div>
+            </div>
+            
+            <span id="nom-salle" style="display: none;"></span>
+            </div>
     </div>
 
-    <div id="overlay-action" class="overlay hidden">
-        <div class="overlay-content">
-            <h3>Action en attente</h3>
-            <p id="overlay-message"></p>
-            <p id="overlay-countdown"></p>
-            <div id="overlay-buttons"></div>
+    <div id="overlay-action" class="hidden">
+        <div class="overlay-contenu">
+            <h2 id="overlay-message">...</h2>
+            <div id="overlay-countdown"></div>
+            <div id="overlay-buttons">
+                </div>
         </div>
+    </div>
+
+    <div id="overlay-zoom" class="hidden">
+        <div class="overlay-zoom-contenu">
+            <img id="image-zoom-cible" src="" alt="Zoom sur la carte" />
+            <div class="overlay-zoom-details">
+                <p id="zoom-type-carte" class="zoom-card-type"></p>
+                <h3 id="zoom-nom-carte" class="zoom-card-title"></h3>
+                <p id="zoom-texte-effet" class="zoom-card-description"></p>
+            </div>
+        </div>
+        <div class="overlay-zoom-close-bg"></div>
     </div>
 
 </body>

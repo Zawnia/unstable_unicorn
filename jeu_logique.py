@@ -28,7 +28,6 @@ class EtatJeu:
         self.timer_resolution = None
         self.logs_partie = []
         
-        # NOUVEAU: La condition de victoire est définie au lancement
         self.licornes_pour_gagner = 7
 
     def log_action(self, message):
