@@ -1,9 +1,12 @@
-Unstable Unicorn — Local Flask Game
+Unstable Unicorn online game
+- 
 
 Project overview
+- 
 - Simple Flask-based web project that implements a card-game-like demo. The app serves a small browser UI from `templates/` and `static/` and contains game logic in Python modules.
 
 Main features
+- 
 - Web UI served by `app.py` (Flask)
 - Game logic in `jeu_logique.py`, `moteur_effets.py`, and `cartes.py`
 - Card metadata in `cartes.json`
@@ -49,6 +52,7 @@ docker run -p 5000:5000 unstable_unicorn:local
 ```
 
 Project structure (key files)
+- 
 - `app.py` — Flask entrypoint and routes
 - `cartes.json` — card data used by the game
 - `cartes.py` — helpers for card loading / parsing
@@ -60,17 +64,21 @@ Project structure (key files)
 - `requirements.txt` — Python dependencies
 
 Development notes
+- 
 - The current branch is `features_alex` in this workspace.
 - If you change Python code, restart the Flask app to pick up changes.
 - Static assets are served from `static/`; use browser dev tools to debug client-side behavior.
 
 Contributing
+- 
 - Fork or branch from `features_alex`, implement changes, and open a pull request describing the change.
 - Keep changes focused and include tests or manual test steps where applicable.
 
 License & credits
-- No license file included. Add `LICENSE` if you intend to open-source this project.
+- 
+-No license file included. Add `LICENSE` if you intend to open-source this project.
 - Icons and images likely come from local assets in `static/Images_cartes/`.
 
 Contact / Next steps
-- If you want, I can add a short `run-dev.ps1` script to automate virtualenv activation and app start.
+- 
+An app by Zawnia & Carlos Echenique
