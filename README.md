@@ -64,20 +64,10 @@ Project structure (key files)
 - `requirements.txt` — Python dependencies
 
 Development notes
-- 
-- The current branch is `features_alex` in this workspace.
+-
 - If you change Python code, restart the Flask app to pick up changes.
 - Static assets are served from `static/`; use browser dev tools to debug client-side behavior.
 
-Contributing
-- 
-- Fork or branch from `features_alex`, implement changes, and open a pull request describing the change.
-- Keep changes focused and include tests or manual test steps where applicable.
-
-License & credits
-- 
--No license file included. Add `LICENSE` if you intend to open-source this project.
-- Icons and images likely come from local assets in `static/Images_cartes/`.
 
 Contact / Next steps
 - 
